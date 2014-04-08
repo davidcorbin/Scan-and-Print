@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/davidcorbin/Downloads/morena-7.1.25/lib/morena7_osx.jar"/>
+	<classpathentry kind="lib" path="lib/morena_license.jar"/>
+	<classpathentry kind="lib" path="lib/morena7_osx.jar"/>
+	<classpathentry kind="lib" path="lib/morena7_win.jar"/>
+	<classpathentry kind="lib" path="lib/morena7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
