@@ -1,5 +1,12 @@
 package ScanPrint;
 
+/*
+ * This simple application uses the Morena framework to get an image from a printer
+ * and then print it. 
+ * 
+ * Author:David Corbin
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
