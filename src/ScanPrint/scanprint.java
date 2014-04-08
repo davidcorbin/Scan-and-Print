@@ -41,17 +41,7 @@ public class scanprint implements ActionListener{
 	}
 	
 /*
-    printerlistb = new ButtonGroup();
-    printServices = PrintServiceLookup.lookupPrintServices(null, null);
-    for (PrintService printer : printServices) {
-        String printera = printer.getName();
-        printlist = new JRadioButton(printera);
-        printerlistb.add(printlist);
-        
-        titlepanel.add(printlist);
-        titlepanel.add(spacer = new JLabel(" "),"span, grow");
-    }
-    mainwindow.add(titlepanel, BorderLayout.SOUTH);
+
 */
 
 	private void basewindow(){
@@ -137,12 +127,26 @@ public class scanprint implements ActionListener{
 			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
 			    titlepanel.add(scanning);
 	    	}
+	    	
+	    	//Error catching
 	    	else {
 	    		JLabel scanning = new JLabel("An error has occured. Please reopen the application.");
 			    scanning.setFont(new Font("Verano", Font.BOLD, 20));
 			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
 			    titlepanel.add(scanning);
 	    	}
+	    }
+	}
+	
+	private void print() {
+	    printerlistb = new ButtonGroup();
+	    printServices = PrintServiceLookup.lookupPrintServices(null, null);
+	    for (PrintService printer : printServices) {
+	        String printera = printer.getName();
+	        printlist = new JRadioButton(printera);
+	        printerlistb.add(printlist);	        
+	        titlepanel.add(printlist);
+	        titlepanel.add(spacer = new JLabel(" "),"span, grow");
 	    }
 	}
 }
