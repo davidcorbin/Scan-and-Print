@@ -111,25 +111,26 @@ public class scanprint implements ActionListener{
 			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
 			    titlepanel.add(scanning);
 			    
+				final JLabel time = new JLabel("<html><center>" + timerval + "</center></html>");
+			    time.setFont(new Font("Verano", Font.BOLD, 20));
+			    time.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
+			    titlepanel.add(time);
+			    
 			    final Timer timer = new Timer(1000, null);
 			    timer.addActionListener(new ActionListener() {
 			    	public void actionPerformed(ActionEvent evt) {
 			        	if (timerval > 0){
 			        		timerval--;
+			        		System.out.println(timerval);
 			        	}
 			        	else {
 			        		timer.stop();
-			        		System.out.println("asdf");
+			        		System.out.println(timerval);
 			        	}
 			        }
 		        });
 		        timer.start();
-
-				JLabel time = new JLabel("<html><center>" + timerval + "</center></html>");
-			    scanning.setFont(new Font("Verano", Font.BOLD, 20));
-			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
-			    titlepanel.add(time);
-			    
+		        
 			    File scandir = new File("Scanned Images");
 			    if (!scandir.exists()) {
 			    	scandir.mkdir();  
