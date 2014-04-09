@@ -7,6 +7,7 @@ package ScanPrint;
  * Author:David Corbin
  */
 
+import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -39,10 +40,7 @@ public class scanprint implements ActionListener{
 		scanprint asdf = new scanprint();
 		asdf.basewindow();
 	}
-	
-/*
 
-*/
 
 	private void basewindow(){
 	    mainwindow = new JFrame();
@@ -88,6 +86,7 @@ public class scanprint implements ActionListener{
 		}
 	}
 	
+    static int timerval = 3;
 	private void scanning() throws Exception {
 	    start.setVisible(false);
 	    desc.setVisible(false);
@@ -112,12 +111,31 @@ public class scanprint implements ActionListener{
 			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
 			    titlepanel.add(scanning);
 			    
+			    final Timer timer = new Timer(1000, null);
+			    timer.addActionListener(new ActionListener() {
+			    	public void actionPerformed(ActionEvent evt) {
+			        	if (timerval > 0){
+			        		timerval--;
+			        	}
+			        	else {
+			        		timer.stop();
+			        		System.out.println("asdf");
+			        	}
+			        }
+		        });
+		        timer.start();
+
+				JLabel time = new JLabel("<html><center>" + timerval + "</center></html>");
+			    scanning.setFont(new Font("Verano", Font.BOLD, 20));
+			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
+			    titlepanel.add(time);
+			    
 			    File scandir = new File("Scanned Images");
 			    if (!scandir.exists()) {
 			    	scandir.mkdir();  
 			    }
-			    
-			    BufferedImage bimage = SynchronousHelper.scanImage(device);
+
+			    //BufferedImage bimage = SynchronousHelper.scanImage(device);
 	    	}
 	    	
 	    	//If the device is a camera
@@ -136,6 +154,10 @@ public class scanprint implements ActionListener{
 			    titlepanel.add(scanning);
 	    	}
 	    }
+	}
+	
+	private void inbetween(){
+		
 	}
 	
 	private void print() {
