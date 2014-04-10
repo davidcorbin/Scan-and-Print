@@ -121,11 +121,12 @@ public class scanprint implements ActionListener{
 			    	public void actionPerformed(ActionEvent evt) {
 			        	if (timerval > 0){
 			        		timerval--;
-			        		System.out.println(timerval);
+			        		//System.out.println(timerval);
+			        		time.setText("<html><center>" + timerval + "</center></html>");
 			        	}
 			        	else {
 			        		timer.stop();
-			        		System.out.println(timerval);
+			        		//System.out.println(timerval);
 			        	}
 			        }
 		        });
@@ -136,7 +137,7 @@ public class scanprint implements ActionListener{
 			    	scandir.mkdir();  
 			    }
 
-			    //BufferedImage bimage = SynchronousHelper.scanImage(device);
+			    BufferedImage bimage = SynchronousHelper.scanImage(device);
 	    	}
 	    	
 	    	//If the device is a camera
