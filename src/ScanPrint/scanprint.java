@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import java.awt.event.*;
 import javax.print.*;
 import java.io.*;
+import javax.imageio.*;
 
 import eu.gnome.morena.*;
 import java.util.List;
@@ -138,6 +139,8 @@ public class scanprint implements ActionListener{
 			    }
 
 			    BufferedImage bimage = SynchronousHelper.scanImage(device);
+			    File outputfile = new File("saved.png");
+			    ImageIO.write(bimage, "png", outputfile);
 	    	}
 	    	
 	    	//If the device is a camera
