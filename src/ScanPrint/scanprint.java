@@ -145,7 +145,7 @@ public class scanprint implements ActionListener{
 	    	
 	    	//If the device is a camera
 	    	else if (device instanceof Camera) {
-	    		JLabel scanning = new JLabel("Please unplug the camera from the computer.");
+	    		JLabel scanning = new JLabel("<html><center>Please unplug the camera<br> from the computer.</center></html>");
 			    scanning.setFont(new Font("Verano", Font.BOLD, 20));
 			    scanning.setBorder(BorderFactory.createEmptyBorder(30, 60, 100, 60));
 			    titlepanel.add(scanning);
